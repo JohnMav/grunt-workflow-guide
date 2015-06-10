@@ -7,6 +7,7 @@ module.exports = function (grunt) {
 	Load our Grunt Tasks
 	 */
 	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	/*
 	Configure our tasks
@@ -17,6 +18,12 @@ module.exports = function (grunt) {
 				src: 'src/sass/style.scss',
 				dest: 'dist/css/style.css'
 			}
+		},
+		concat: {
+			dist: {
+				src: 'src/js/*.js',
+				dest: 'dist/js/scripts.js'
+			}
 		}
 	});
 
@@ -25,6 +32,7 @@ module.exports = function (grunt) {
 	 */
 	
 	grunt.registerTask('default', [
-		'sass'
+		'sass',
+		'concat'
 	]);
 };
