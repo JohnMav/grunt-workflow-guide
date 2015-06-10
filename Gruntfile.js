@@ -4,6 +4,11 @@ This is our Grunt Wrapper, this tells node we are using grunt!
 
 module.exports = function (grunt) { 
 	/*
+	Loading our config
+	 */
+	var config = grunt.file.readYAML('Gruntconfig.yml');
+
+	/*
 	Load our Grunt Tasks
 	 */
 	 require('load-grunt-tasks')(grunt);
@@ -14,14 +19,14 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		sass: {
 			dist: {
-				src: 'src/sass/style.scss',
-				dest: 'dist/css/style.css'
+				src: config.scssDir + 'style.scss',
+				dest: config.cssDir + 'style.css'
 			}
 		},
 		concat: {
 			dist: {
-				src: 'src/js/*.js',
-				dest: 'dist/js/scripts.js'
+				src: config.jsSrcDir + '*.js',
+				dest: config.jsConcatDir + 'scripts.js',
 			}
 		}
 	});
