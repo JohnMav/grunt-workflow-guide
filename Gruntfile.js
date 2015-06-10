@@ -6,8 +6,7 @@ module.exports = function (grunt) {
 	/*
 	Load our Grunt Tasks
 	 */
-	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-contrib-concat');
+	 require('load-grunt-tasks')(grunt);
 
 	/*
 	Configure our tasks
