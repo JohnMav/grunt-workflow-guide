@@ -28,6 +28,12 @@ module.exports = function (grunt) {
 				src: config.jsSrcDir + '*.js',
 				dest: config.jsConcatDir + 'scripts.js',
 			}
+		},
+		jshint: {
+			all: [
+				'Gruntfile.js',
+				config.jsSrcDir + "*.js"
+			]
 		}
 	});
 
@@ -37,6 +43,7 @@ module.exports = function (grunt) {
 	
 	grunt.registerTask('default', [
 		'sass',
-		'concat'
+		'concat',
+		'jshint'
 	]);
 };
