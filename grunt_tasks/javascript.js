@@ -1,0 +1,3 @@
+/*
+This will contain our JavaScript grunt tasks 
+ */
