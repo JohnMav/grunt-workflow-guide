@@ -37,6 +37,12 @@ module.exports = function (grunt) {
 				'Gruntfile.js',
 				config.jsSrcDir + "*.js"
 			]
+		},
+		watch: {
+			sass: {
+				files: config.scssDir + "**/*.scss",
+				tasks: ["sass"]
+			}
 		}
 	});
 
@@ -47,6 +53,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'sass',
 		'concat',
-		'jshint'
+		'jshint',
+		'watch'
 	]);
 };
