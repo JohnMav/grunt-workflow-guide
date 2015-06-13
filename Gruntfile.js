@@ -26,6 +26,7 @@ module.exports = function (grunt) {
 		'sass',
 		'concat',
 		'jshint',
+		'csslint',
 		'watch'
 	]);
 };
